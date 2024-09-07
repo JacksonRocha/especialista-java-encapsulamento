@@ -12,9 +12,9 @@ public class ServicoDeDepositoPix {
             throw new IllegalArgumentException(
                     String.format("Valor de deposito não pode ser menor que R$ %.2f", Cartao.VALOR_MINIMI_DEPOSITO));
         }
-        cartao.saldo += valorDeposito - Cartao.TARIFA_DEPOSITO;
+        cartao.alterarSaldo(cartao.obterSaldo() + valorDeposito - Cartao.TARIFA_DEPOSITO);
 
-        return new Recibo(cartao.titular, "Deposito", valorDeposito);
+        return new Recibo(cartao.obterTitular(), "Deposito", valorDeposito);
     }
 
 }
