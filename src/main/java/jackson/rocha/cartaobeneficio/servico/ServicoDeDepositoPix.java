@@ -1,4 +1,7 @@
-package jackson.rocha.cartaobeneficio;
+package jackson.rocha.cartaobeneficio.servico;
+
+import jackson.rocha.cartaobeneficio.Cartao;
+import jackson.rocha.cartaobeneficio.Recibo;
 
 public class ServicoDeDepositoPix {
 
