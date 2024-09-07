@@ -5,7 +5,7 @@ public class Estabelecimento {
     public String nome;
     public String saldo;
 
-    public Estabelecimento(String nome, String saldo) {
+    public Estabelecimento(String nome) {
         this.nome = nome;
     }
 }
