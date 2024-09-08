@@ -2,21 +2,37 @@ package jackson.rocha.projetoagenda.agenda;
 
 public class Horario {
 
-    public int[] valores = new int[2];
-
-//    public final int hora;
-//    public final int minuto;
+    private int hora;
+    private int minuto;
 
     public Horario(int hora, int minuto) {
+        setHora(hora);
+        setMinuto(minuto);
+    }
+
+    public int getHora() {
+        return hora;
+    }
+
+    public int getMinuto() {
+        return minuto;
+    }
+
+    public void setHora(int hora) {
         if (hora < 0 || hora > 23) {
             throw new IllegalArgumentException("Hora inválida" + hora);
         }
+        this.hora = hora;
+    }
 
+    public void setMinuto(int minuto) {
         if (minuto < 0 || minuto > 59) {
             throw new IllegalArgumentException("Minuto inválido" + minuto);
         }
+        this.minuto = minuto;
+    }
 
-        this.valores[0] = hora;
-        this.valores[1] = minuto;
+    public String formatarHorario() {
+        return String.format("%02dh:%02dm", this.hora, this.minuto);
     }
 }
